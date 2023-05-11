@@ -1,6 +1,9 @@
 from curses import raw
 import spacy
 import json
+from collections import OrderedDict
+import numpy as np
+
 nlp = spacy.load("en_core_web_lg")
 
 
@@ -21,12 +24,30 @@ for item in data:
         researchInterests.update({item["name"]: interest})
 
 print(len(researchInterests))
+for key,val in researchInterests.items():
+    researchInterests[key] = nlp(val)
+    
+
+query = input("what would you like to search for?\n")
+
+query_doc = nlp(query)
+i = 0
+
+matchesFound = {}
 for val in researchInterests.values():
     
-    if(type(val) == list):
-        print(get_keys_from_value(researchInterests,val)[0])
-        del researchInterests[get_keys_from_value(researchInterests,val)[0]]
-        
-print(len(researchInterests))
+    if(val.vector_norm):
+        simalrityRating = query_doc.similarity(val)
+        # print(i,": ",type(simalrityRating), type(val))
+        if(simalrityRating >= 0.50):
+            key = get_keys_from_value(researchInterests, val)[0]
+            matchesFound.update({key: simalrityRating})
+            # print(key," ", simalrityRating, " ")
+    i += 1
 
+unsortedKeys = list(matchesFound.keys())
+unsortedValues = list(matchesFound.values())
+sorted_value_index = np.argsort(unsortedValues)
+sortedMatches = {unsortedKeys[i]: unsortedValues[i] for i in sorted_value_index}
 
+print(sortedMatches)
