@@ -1,10 +1,22 @@
+# Table of Contents
+
+* [Additional Resources Pertaining to this Project](#additional-resources-pertaining-to-this-project)
+* [Install Dependencies](#install-dependencies)
+* [Run the Project](#run-the-project)
+* [Semantic Search for Information Retrieval using Large Language Models](#semantic-search-for-information-retrieval-using-large-language-models)
+* [Abstract](#abstract)
+* [Acknowledgements](#acknowledgements)
+* [Table of Contents](#table-of-contents)
+* [Motivation](#motivation)
+* [Methodology](#methodology)
+* [Results](#results)
+* [Future Work](#future-work)
+* [References](#references)
+
 # Additional Resources Pertaining to this Porject
 - [View Project](https://cie-air.onrender.com/)
 - [Semantic Search Backend](https://github.com/gksaurabh/semanticSearch-backend)
 - [Front End Codebase](https://github.com/Kailinho/carleton-ai-research) 
-
-# Semantic Search
-The following notebook will implement a semantic search using OpenAIs text-embedding-ada-002 library. 
 
 
 ## Install Dependencies
@@ -51,17 +63,6 @@ I extend my appreciation to the developers at OpenAI, The Python Software Founda
 Lastly, I would like to thank my family, friends, and colleagues who motivated, supported, guided me throughout the duration of this project.
 
 ---
-
-## Table of Contents
-
-* [Abstract](#abstract)
-* [Acknowledgements](#acknowledgements)
-* [Table of Contents](#table-of-contents)
-* [Motivation](#motivation)
-* [Methodology](#methodology)
-* [Results](#results)
-* [Future Work](#future-work)
-* [References](#references)
 
 ## Motivation
 
