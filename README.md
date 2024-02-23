@@ -111,16 +111,17 @@ The embeddings for each query and corpus, represented as numerical vectors, allo
 
 Cosine similarity is calculated using the equation:
 
-\[
+$$
 \cos \theta = \frac{A \cdot B}{\|A\| \cdot \|B\|}
-\]
+$$
+
 where:
-\[
-A &= \text{Vector } A \\
-B &= \text{Vector } B \\
-\|A\| &= \text{Magnitude of vector } A \\
-\|B\| &= \text{Magnitude of vector } B
-\]
+
+- \(A\) is Vector A
+- \(B\) is Vector B
+- \(\|A\|\) is the Magnitude of vector A
+- \(\|B\|\) is the Magnitude of vector B
+
 
 ### Ranking Algorithm
 Once a model was identified as the superior solution for our domain-specific task, a ranking algorithm was developed to provide the most pertinent information as top suggestions, prior to transmitting our results from the back end to the front end. This was accomplished through a hierarchy of rules: Exact matches were given priority over semantically similar ones. A tri-gram exact match took precedence over semantically similar search results for search phrases containing more than three words. To illustrate, consider the query "NLP for mining software repositories." The search process would begin with an exact match search for the entire query, followed by each bigram: "NLP for","for mining", "mining software", "software repositories"; followed by each trigram: "NLP for mining," "mining for software," and "mining software repositories." After exhausting the exact match search, the outcomes of the semantically similar search were appended to the results. This method ensures that only the most pertinent search results appear at the forefront.
