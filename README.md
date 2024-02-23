@@ -1,5 +1,11 @@
+# Additional Resources Pertaining to this Porject
+- [View Project](https://cie-air.onrender.com/)
+- [Semantic Search Backend](https://github.com/gksaurabh/semanticSearch-backend)
+- [Front End Codebase](https://github.com/Kailinho/carleton-ai-research) 
+
 # Semantic Search
 The following notebook will implement a semantic search using OpenAIs text-embedding-ada-002 library. 
+
 
 ## Install Dependencies
 Here we are going to install all our dependencies and packages that we need
